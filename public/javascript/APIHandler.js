@@ -1,25 +1,33 @@
 class APIHandler {
-  constructor (baseUrl) {
-    this.BASE_URL = baseUrl;
+  constructor() {
+    this.name
+    this.occupation
+    this.weapon
+    ;(this.cartoon = true),
+      (this.api = axios.create({
+        BASE_URL: "http://127.0.0.1:5500/index.html",
+      }))
   }
 
-  getFullList () {
-
+  getFullList() {
+    return this.api.get("/characters")
   }
 
-  getOneRegister () {
-
+  getOneRegister() {
+    return this.api.get(`/characters/${characterId}`)
   }
 
-  createOneRegister () {
-
+  createOneRegister(characterInfo) {
+    return this.api.post(`/characters`, characterInfo)
   }
 
-  updateOneRegister () {
-
+  updateOneRegister(characterId, characterInfo) {
+    return this.api.put(`/characters/${characterId}`, characterInfo)
   }
 
-  deleteOneRegister () {
-
+  deleteOneRegister(characterId) {
+    return this.api.delete(`/characters/${characterId}`)
   }
 }
+
+module.exports = APIHandler
