@@ -23,3 +23,8 @@ window.addEventListener("load", () => {
     .getElementById("new-character-form")
     .addEventListener("submit", function (event) {})
 })
+
+document.getElementById("get-country-btn").addEventListener("click", () => {
+  const userInput = document.getElementById("country-name-input").value
+  getCountryInfo(userInput)
+})

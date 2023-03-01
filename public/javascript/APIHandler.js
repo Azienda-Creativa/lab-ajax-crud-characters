@@ -1,32 +1,32 @@
 class APIHandler {
   constructor() {
-    this.name
-    this.occupation
-    this.weapon
-    ;(this.cartoon = true),
-      (this.api = axios.create({
-        BASE_URL: "http://127.0.0.1:5500/index.html",
-      }))
+    this.api = axios.create({
+      BASE_URL: "http://127.0.0.1:5500/index.html",
+    })
   }
 
   getFullList() {
-    return this.api.get("/characters")
+    this.api.get("/characters").then((res) => res.data)
   }
 
   getOneRegister() {
-    return this.api.get(`/characters/${characterId}`)
+    let data = req.params
+    this.api.get(`/characters/${characterId}`).then((res) => res.data)
   }
 
   createOneRegister(characterInfo) {
-    return this.api.post(`/characters`, characterInfo)
+    let data = req.body
+    this.api.post(`/characters`, characterInfo).then((res) => res.send(data))
   }
 
   updateOneRegister(characterId, characterInfo) {
-    return this.api.put(`/characters/${characterId}`, characterInfo)
+    this.api
+      .put(`/characters/${characterId}`, characterInfo)
+      .then((res) => res.data)
   }
 
   deleteOneRegister(characterId) {
-    return this.api.delete(`/characters/${characterId}`)
+    this.api.delete(`/characters/${characterId}`).then((res) => res.data)
   }
 }
 
