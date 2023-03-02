@@ -29,6 +29,20 @@
     },
     {
       "id": 6
+    },
+    {
+      "name": "Luigi",
+      "occupation": "Brother",
+      "weapon": "turtles",
+      "cartoon": "false",
+      "id": 7
+    },
+    {
+      "name": "Super Mario",
+      "occupation": "Hero",
+      "weapon": "go-cart",
+      "cartoon": "false",
+      "id": 8
     }
   ]
 }
